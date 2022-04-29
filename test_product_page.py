@@ -18,6 +18,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.solve_quiz_and_get_code() # результат математического выражения и ввести ответ
     page.should_to_basket() # делаем проверку
 
+@pytest.mark.need_review
 @pytest.mark.parametrize('link', [0,1,2,3,4,5,6,pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail),8,9])
 def test_guest_can_add_product_to_basket_promo(browser, link):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"

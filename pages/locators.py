@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 # Внутри создайте новый класс. Каждый класс будет соответствовать каждому классу PageObject: 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link") # теперь каждый селектор — это пара: как искать и что искать.
@@ -22,12 +23,17 @@ class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR,".alert-success") # сообщение об успешном добавлении в корзину (по селектору их 3)
 
 # В файле locators.py создаем новый класс BasePageLocators и переносим туда соответствующие элементы:
+
 class BasePageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link") # изначально был селектор #login_link_ink (и был не верен)
-    BASKET_BTN = (By.CSS_SELECTOR, "#default .btn-group a.btn.btn-default ") # кнопка корзины
-    ADD_TO_BASKET = (By.CSS_SELECTOR, "#default > div.container-fluid.page > div > div > div > section > div > ol > li:nth-child(1) > article > div.product_price > form > button") # кнопка Добавить в корзину (это что бы проверить тесты 4.3.10 не очень хороший селектор)
-    USER_ICON = (By.CSS_SELECTOR, ".icon-user") # Селектор соответственно, что пользователь залогинен
+    BUTTON_COMPANY = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href^="?page=about"]') # кнопка - локатор О КОМПАНИИ
+    BUTTON_SERVICES = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href^="?page=services"]') # кнопка - локатор УСЛУГИ
+    BUTTON_EXPERIENCE = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href^="?page=experience"]') # кнопка - локатор ОПЫТ
+    BUTTON_ADVANTAGES = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href^="?page=advantages"]') # кнопка - локатор НАШИ ПРЕИМУЩЕСТВА
+    BUTTON_CAREER = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href="?page=career"]') # кнопка - локатор КАРЬЕРА У НАС
+    BUTTON_VACANCY = (By.CSS_SELECTOR, 'div.features-section.pb-80 div >a[href="?page=vacancy"]') # кнопка - локатор ВАКАНСИИ
+    SCROLL_TOP = (By.CSS_SELECTOR, '.scroll-top') # кнопка подъема на верх
+    BUTTON_CONTACT = (By.CSS_SELECTOR, '.nav-link[href="?page=contact"]') # кнопка - локатор ВАКАНСИИ
+    
     
 # Локаторы BasketPageLocators для страницы корзины    
 class BasketPageLocators():
