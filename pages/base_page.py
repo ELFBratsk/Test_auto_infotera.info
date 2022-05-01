@@ -55,12 +55,15 @@ class BasePage():
     
     # проверка перехода по страницам    
     def go_to_be_css_selector_infotera_info(self):
+        delay = 1 # Задержка в секундах
         self.browser.find_element(*BasePageLocators.BUTTON_COMPANY).click() # перехода на страницу
         self.browser.back() # возврат на начальную страницу
         self.browser.find_element(*BasePageLocators.BUTTON_SERVICES).click()
         self.browser.back()
         self.browser.find_element(*BasePageLocators.BUTTON_EXPERIENCE).click()
         self.browser.back()
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # scroll вниз
+        time.sleep(delay) # Задержка для прокрутки
         self.browser.find_element(*BasePageLocators.BUTTON_ADVANTAGES).click()
         self.browser.back()
         self.browser.find_element(*BasePageLocators.BUTTON_CAREER).click()
@@ -72,6 +75,7 @@ class BasePage():
     
     # прокрутка вниз и на верх
     def scroll_infotera_info(self):
+        delay = 1 # Задержка в секундах
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);") # scroll вниз
         self.browser.find_element(*BasePageLocators.SCROLL_TOP).click() # подъем на верх
-        time.sleep(0.5)
+        time.sleep(delay)
