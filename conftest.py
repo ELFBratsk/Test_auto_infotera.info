@@ -17,7 +17,7 @@ def browser(request):
         print("\nstart chrome browser for test..")
         options = Options() #используйте класс Options
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language}) #метод add_experimental_option
-        options.add_argument("--window-size=1920,1080") # разрешение экрана
+        # options.add_argument("--window-size=1920,1080") # разрешение экрана
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
